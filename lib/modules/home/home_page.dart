@@ -17,14 +17,16 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               style: style,
               onPressed: () {
-                Modular.to.navigate('/estoque');
+                Modular.to.pushNamed('/estoque');
               },
               child: const Text('Estoque'),
             ),
             const SizedBox(height: 30),
             ElevatedButton(
               style: style,
-              onPressed: () {},
+              onPressed: () {
+                Modular.to.pushNamed('/produto');
+              },
               child: const Text('Produtos'),
             ),
           ],

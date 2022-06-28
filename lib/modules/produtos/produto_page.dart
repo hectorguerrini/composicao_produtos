@@ -1,24 +1,22 @@
-import 'package:composicao_produtos/modules/estoque/estoque_controller.dart';
+import 'package:composicao_produtos/modules/produtos/produto_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_modular/flutter_modular.dart';
 
-class EstoquePage extends StatefulWidget {
-  const EstoquePage({Key? key}) : super(key: key);
+class ProdutoPage extends StatefulWidget {
+  const ProdutoPage({Key? key}) : super(key: key);
 
   @override
-  State<EstoquePage> createState() => _EstoquePageState();
+  State<ProdutoPage> createState() => _ProdutoPageState();
 }
 
-class _EstoquePageState extends State<EstoquePage> {
-  final EstoqueController _controller = Modular.get();
-
+class _ProdutoPageState extends State<ProdutoPage> {
+  final ProdutoController _controller = Modular.get();
   @override
   Widget build(BuildContext context) {
-    setState(() {});
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Estoque'),
+        title: const Text('Produtos'),
       ),
       body: ListView.separated(
         separatorBuilder: (context, index) => const Divider(
@@ -33,14 +31,14 @@ class _EstoquePageState extends State<EstoquePage> {
           }
           var value = _controller.lista[index];
           return ListTile(
-            title: Text(value.descricao),
-            subtitle: Text('Qtde:${value.quantidade} R\$ ${value.preco}'),
+            title: Text(value.nome),
+            subtitle: Text('R\$ ${value.preco}'),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Modular.to.pushNamed('/estoque/cadastro');
+          Modular.to.pushNamed('/produto/cadastro');
         },
         child: const Icon(Icons.add),
       ),

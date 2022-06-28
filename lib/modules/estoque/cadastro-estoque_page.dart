@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-
 import 'estoque_controller.dart';
 
 class CadastroEstoquePage extends StatelessWidget {
@@ -54,7 +51,7 @@ class CadastroEstoquePage extends StatelessWidget {
                       int.parse(_quantidadeCtrl.text),
                       double.parse(_precoCtrl.text));
                 },
-                child: const Text('Estoque'),
+                child: const Text('Salvar Estoque'),
               ),
             ],
           ),

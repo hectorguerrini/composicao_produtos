@@ -29,7 +29,7 @@ class EstoqueController {
         duration: Duration(seconds: 2),
       ));
 
-      Modular.to.navigate('/estoque');
+      Modular.to.navigate('/');
     } on Exception catch (e) {
       scaffoldKey.currentState?.showSnackBar(SnackBar(
         backgroundColor: Colors.red,
